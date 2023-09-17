@@ -3,7 +3,12 @@
 # Challenge IBM - Sprint 3
 
 
-### Desenvolvimento da arquitetura inicial de uma aplicação IoT capaz de receber e transmitir dados provenientes de dispositivos conectados. 
+## Integrantes:
+- João Lucas (rm: 551612)
+- Miguel Ruan (rm: 551239)
+- Murilo Marsola Eloys (rm: 552117)
+- Ricardo Ramos Vergani (rm: 550166)
+- Victor Kenzo Toma (rm: 551649)
 
 
 ## Detalhes do projeto:
