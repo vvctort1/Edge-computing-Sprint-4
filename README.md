@@ -2,7 +2,7 @@
 # Challenge IBM - Sprint 3
 
 
-### Desenvolvimento da arquitetura inicial de uma aplicação IoT capaz de receber e transmitir dados provenientes de dispositivos conectados. 
+### Desenvolvimento da arquitetura inicial de uma aplicação IoT capaz de receber e transmitir dados provenientes de dispositivos conectados.
 
 
 ## Detalhes do projeto:
@@ -19,6 +19,12 @@ A aplicação terá duas opções de login, por um funcionário da empresa ou um
 O draft da nossa proposta terá a seguinte estrutura:
 
 Os componentes básicos do SensorAlertCar será uma placa de prototipagem com conexão com a internet (esp32) e um mq135 de dióxido de carbono. Se comunicará utilizando o FIWARE (back-end). O dispositivo se comunicará com o mqtt broker através do protocolo MQTT e, à partir do componente IoT Agent mqtt, utilizará o protocolo HTTP para fazer a conexão com o Orion Context Broker (armazenamento de dados em tempo de execução) e o STH-Comet (armazenamento histórico de dados), ambos enviando informações ao banco de dados MongoDB, enfim trazendo os dados para a aplicação (front-end).
+
+
+<img src="./img/arquitetura.png">
+
+
+
 ## Recursos necessários:
 
 Para a utilização correta e funcional do nosso projeto é necessário:
@@ -41,6 +47,6 @@ Para utilizar o projeto:
 3. Ter seu token gerado através do cadastro;
 4. Verificar a conexão com a internet;
 5. Utilizar a aplicação;
-6. Feedbacks, melhorias e sugestões disponíveis.
+6. Feedbacks, melhorias e sugestões na aplicação.
 
 

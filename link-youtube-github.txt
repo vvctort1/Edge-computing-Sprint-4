@@ -1,0 +1,11 @@
+Link do vídeo de Edge Computing & Computer Systems sobre a temática de Iot:
+
+https://youtu.be/gySDYufczoE
+
+
+
+
+
+Link do repositório do Github contendo arquivo READme.md e códigos fonte:
+
+https://github.com/vvctort1/Edge-computing-Sprint-3
