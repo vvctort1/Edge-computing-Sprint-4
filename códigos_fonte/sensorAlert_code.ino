@@ -4,8 +4,8 @@
 #include <PubSubClient.h>
  
 // Configurações de WiFi
-const char *SSID = "TOMA2-2.4GHz";
-const char *PASSWORD = "earvf0313250923!";  // Substitua pelo sua senha
+const char *SSID = "";
+const char *PASSWORD = "";  // Substitua pelo sua senha
  
 // Configurações de MQTT
 const char *BROKER_MQTT = "46.17.108.113";
