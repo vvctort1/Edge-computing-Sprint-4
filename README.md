@@ -16,7 +16,7 @@
 
 
 ## Detalhes do projeto:
-O dispositivo físico do projeto foi batizado como SensorAlertCar, o intuito é fazer a instalação do sensor nas proximidades do escapamento do carro, possuindo como funcionalidade a coleta de dados referêntes á poluição gerada por um determinado veículo e retornando aos usuários da aplicação do projeto.
+O dispositivo físico do projeto foi batizado como SensorAlertCar, o intuito é fazer a instalação do sensor nas proximidades do escapamento do carro, possuindo como funcionalidade a coleta de dados referêntes á poluição gerada por um determinado veículo e retornando aos usuários da aplicação do produto. Os usuários conseguiram vizualizar informações sobre o nível de poluição atual do seu veículo através de dashboards e gráficos.
 
 Os dados coletados pelo sensor serão enviados através do fiware para a aplicação e, de acordo com padrões pré estabelecidos pelas fabricantes de carro sobre a quantidade de poluentes expelidos, o sensor retornará a resposta informando se o carro está poluindo mais do que o esperado ou se está de acordo com os padrões considerados.
 
@@ -39,7 +39,6 @@ Os componentes básicos do SensorAlertCar será uma placa de prototipagem com co
 Para a utilização correta e funcional do nosso projeto é necessário:
 
 - Obter uma placa ESP32 e um sensor mq135;
-- Desenvolver o protótipo;
 - Conectar o dispositivo com a aplicação, através de um back-end (FIWARE);
 - Dispositivo instalado em algum veículo;
 - O veículo deve estar em funcionamento e ativo;
@@ -66,24 +65,24 @@ Para utilizar o projeto:
 Para a utilização correta e funcional do nosso projeto é necessário:
 
 - Obter uma placa ESP32 e um sensor mq135;
-- Desenvolver o protótipo;
 - Conectar o dispositivo com a aplicação, através de um back-end (FIWARE);
 - Dispositivo instalado em algum veículo;
 - O veículo deve estar em funcionamento e ativo;
 - Ter acesso a internet para obter os dados gerados em tempo de execução;
+- Fonte de alimentação via cabo usb;
 - Ter o software instalado em alguma máquina ou app em smartphone para conseguir consultar as funções e benefícios;
 
 ## Instruções de Uso:
 
-Para utilizar o projeto:
-
+Para utilizar o produto:
 
 1. Fazer a instalação do SensorAlertCar no seu veículo;
 2. Instalar a aplicação;
 3. Ter seu token gerado através do cadastro;
 4. Verificar a conexão com a internet;
-5. Utilizar a aplicação;
+5. Verificar informações coletadas pelo sensor através de um dashboard e gráficos;
 6. Feedbacks, melhorias e sugestões na aplicação.
+
 
 
 

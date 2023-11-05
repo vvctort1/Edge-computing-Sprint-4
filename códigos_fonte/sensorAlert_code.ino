@@ -1,7 +1,9 @@
 /////////--------IOT--------FIAP------------///////////
- 
+#include <LiquidCrystal_I2C.h> 
 #include <WiFi.h>
 #include <PubSubClient.h>
+
+
  
 // Configurações de WiFi
 const char *SSID = "";
@@ -25,6 +27,12 @@ unsigned long publishUpdate = 0;
 const int TAMANHO = 200;
 int sensorAlert = 34; //SENSOR ALERT PINO 34
 float valorSensorGas = 0;
+int buzzerPin = 35;
+const int pinoLEDR = 13;
+const int pinoLEDG = 12;
+const int pinoLEDB = 14;
+
+LiquidCrystal_I2C lcd(0x27, 20, 4);
  
 // Protótipos de funções
 void initWiFi();
@@ -32,6 +40,8 @@ void initMQTT();
 void reconnectMQTT();
 void reconnectWiFi();
 void checkWiFIAndMQTT();
+
+
  
 void initWiFi() {
   Serial.print("Conectando com a rede: ");
@@ -94,8 +104,15 @@ void reconnectWiFi(void) {
 void setup() {
   Serial.begin(115200);
   pinMode(sensorAlert, INPUT);
+  pinMode(buzzerPin , OUTPUT);
+  pinMode(pinoLEDR,OUTPUT);
+  pinMode(pinoLEDG,OUTPUT);
+  pinMode(pinoLEDB,OUTPUT);
+  lcd.init();
+  lcd.backlight();
   initWiFi();
   initMQTT();
+
 }
  
 void loop() {
@@ -103,9 +120,6 @@ void loop() {
   checkWiFIAndMQTT();
   if ((millis() - publishUpdate) >= PUBLISH_DELAY) {
     publishUpdate = millis();
-
- 
-     
     //sensor mq2
     char msgBuffer2[7];
     Serial.print("Gás: ");
@@ -116,4 +130,51 @@ void loop() {
  
  
     }
+
+  if (valorSensorGas < 750){
+    analogWrite(pinoLEDG, 0);
+    analogWrite(pinoLEDR, 0);
+    analogWrite(pinoLEDB, 255);
+    noTone(buzzerPin);
+    lcd.clear();
+    lcd.setCursor(4,0);
+    lcd.print("Baixo nivel");
+    lcd.setCursor(3,1);
+    lcd.print("de Poluicao :)");
+    lcd.setCursor(1, 2);
+    lcd.print("Quantidade de Gas:");
+    lcd.setCursor(7,3);
+    lcd.print(valorSensorGas);
+    delay(1500);
+  } else if (valorSensorGas >= 750 && valorSensorGas < 900) {
+    analogWrite(pinoLEDR, 0);
+    analogWrite(pinoLEDG, 255);
+    analogWrite(pinoLEDB, 0);
+    noTone(buzzerPin);
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("Atencao! Quantidade");
+    lcd.setCursor(2, 1);
+    lcd.print("elevada de gases!");
+    lcd.setCursor(1, 2);
+    lcd.print("Quantidade de Gas:");
+    lcd.setCursor(7, 3);
+    lcd.print(valorSensorGas);
+    delay(1500);
+  } else if (valorSensorGas >= 900) {
+    analogWrite(pinoLEDR, 255);
+    analogWrite(pinoLEDG, 0);
+    analogWrite(pinoLEDB, 0);
+    tone(buzzerPin, 1500);
+    lcd.clear();
+    lcd.setCursor(3, 0);
+    lcd.print("ALERTA VERMELHO!");
+    lcd.setCursor(0, 1);
+    lcd.print("Levar para conserto!");
+    lcd.setCursor(1, 2);
+    lcd.print("Quantidade de Gas:");
+    lcd.setCursor(7, 3);
+    lcd.print(valorSensorGas);
+    delay(1500);
+  }
   }
