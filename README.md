@@ -48,6 +48,9 @@ APIs disponibilizadas pelo sistema de back-end serão utilizadas para buscar dad
 Será implementado gráficos e visualizações para representar os dados de maneira compreensível pelo usuário.
 
 <img style="height: 400px;" src="./img/grafico-python.png">
+<img src="./img/freeboard.png">
+
+Observação: Verificamos que o valor obtido pelo sensor de gás mq135 é relativo á tensão elétrica, que é diretamente proporcional a quantidade de gás detectada.
 
 #### 4. Segurança:
 
@@ -79,7 +82,13 @@ Para a utilização correta e funcional do nosso produto é necessário:
 - Fonte de alimentação via cabo usb;
 - Acesso ao dashboard de vizualização dos dados (freeboard.io).
 
-<img src="./img/freeboard.png">
+
+### Algumas fotos do protótipo funcionando:
+
+<img style= "height: 300px;" src="./img/prototipo_verde.jpeg">
+<img style= "height: 300px;" src="./img/prototipo_azul.jpeg">
+<img style= "height: 300px;" src="./img/prototipo_vermelho.jpeg">
+
 
 ## Instruções de Uso:
 
